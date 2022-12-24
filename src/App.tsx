@@ -5,6 +5,9 @@ import NavBar from "./components/NavBar/NavBar";
 import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
+import News from "./components/News/News";
+import Music from "./components/Music/Music";
+import Settings from "./components/Settings/Settings";
 
 
 function App(props: any) {
@@ -18,9 +21,9 @@ function App(props: any) {
         <div className="app-wrapper-content">
           <Route path="/dialogs" component={Dialogs} />
           <Route path="/profile"  component={Profile} />
-          <Route path="/news"  component={Profile} />
-          <Route path="/music"  component={Profile} />
-          <Route path="/settings"  component={Profile} />
+          <Route path="/news"  component={News} />
+          <Route path="/musics"  component={Music} />
+          <Route path="/settings"  component={Settings} />
         </div>
       </div>
 
