@@ -1,23 +1,32 @@
 import React from "react";
 import Post from "./Post/Post";
-import styles from "./Post/Post.module.css";
+import styles from "./MyPosts.module.css";
+import {ProfilePageType} from "../../../redux/state";
 
-const MyPosts = (props: any) => {
+
+const MyPosts = (props: ProfilePageType) => {
+
+  let postElements = props.posts
+    .map(p => <Post id={p.id} message={p.message} likeCount={p.likeCount} />)
+
   return (
     <div className={styles.postsBlock}>
-      My posts
+
+      <h3>My posts</h3>
 
       <div>
-        <div><textarea></textarea> </div>
-        <div><button> Add post</button></div>
+        <div><textarea></textarea></div>
+        <div>
+          <button> Add post</button>
+        </div>
 
       </div>
 
       <div>
         <div className={styles.posts}>
-          <Post message='Hi, how are you?' likeCount="like 15"/>
-          <Post message='Hi!'  likeCount="like 8"/>
-          <Post message='Hello!!!' likeCount="like 5"/>
+
+          {postElements}
+
         </div>
       </div>
 

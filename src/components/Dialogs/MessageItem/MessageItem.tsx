@@ -1,9 +1,7 @@
 import React from "react";
-import styles from "./Dialogs.module.css";
+import styles from "../Dialogs.module.css";
+import {MessageItemType} from "../../../redux/state";
 
-export type MessageItemType = {
-  message: string
-}
 
 const MessageItem = (props: MessageItemType) => {
   return (

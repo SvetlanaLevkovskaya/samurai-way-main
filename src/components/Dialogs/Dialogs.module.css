@@ -1,6 +1,15 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 10fr;
+
+}
+
+.dialog a {
+    color: white;
+}
+
+.dialog a:hover{
+    color: #469bce;
 }
 
 .dialogsItems {
@@ -12,11 +21,12 @@
 
 }
 
-.messages{
+.messages {
 
 }
 
-.messages .message{
+.messages .message {
+    color: white;
 
 }
 
