@@ -1,19 +1,15 @@
 import React from "react";
 import styles from "./Post.module.css"
-import post from './post.jpg'
+import post from "./post.jpg"
+import {PostType} from "../../../../redux/state";
 
-export type PostMessageType = {
-  id: string
-  message: string
-  likeCount: number
-}
+const Post = ({id, message, likeCount}: PostType) => {
 
-const Post = (props: PostMessageType) => {
   return (
     <div className={`${styles.item} ${styles.active}`}>
 
-      <img src={post} alt="img"/>{props.message}
-      <div><span> like {props.likeCount} </span></div>
+      <img src={post} alt="img" />{message}
+      <div><span> like {likeCount} </span></div>
 
     </div>
   );

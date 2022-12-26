@@ -4,20 +4,14 @@
     padding: 10px;
 }
 
-.item a{
+.item a {
     color: white;
 }
 
-.item a:active{
+.item a:active {
     color: #469bce;
 }
 
-.item a:hover{
+.item a:hover {
     color: DarkMagenta;
 }
-
-/*
-item a:visited{
-    text-decoration: none;
-}
-*/

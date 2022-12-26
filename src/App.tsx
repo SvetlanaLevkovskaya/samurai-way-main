@@ -10,26 +10,17 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import {AppType} from "./redux/state";
 
-
 function App(props: AppType) {
 
   return (
-
     <div className="app-wrapper">
       <Header />
       <NavBar />
 
-
       <div className="app-wrapper-content">
-        {/*       <Route path="/dialogs" component={Dialogs} />
-          <Route path="/profile"  component={Profile} />
-          <Route path="/news"  component={News} />
-          <Route path="/musics"  component={Music} />
-          <Route path="/settings"  component={Settings} />*/}
 
-        <Route path="/dialogs" render={() => <Dialogs dialogs={props.state.dialogsPage.dialogs}
-                                                      messages={props.state.dialogsPage.messages} />} />
-        <Route path="/profile" render={() => <Profile posts={props.state.profilePage.posts} />} />
+        <Route path="/dialogs" render={() => <Dialogs dialogsPage={props.state.dialogsPage} />} />
+        <Route path="/profile" render={() => <Profile profilePage={props.state.profilePage} />} />
         <Route path="/news" render={() => <News />} />
         <Route path="/musics" render={() => <Music />} />
         <Route path="/settings" render={() => <Settings />} />
@@ -37,7 +28,6 @@ function App(props: AppType) {
       </div>
     </div>
   )
-
 }
 
 export default App;

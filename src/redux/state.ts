@@ -1,22 +1,20 @@
-import {rename} from "fs";
-
 export type PostType = {
   id: string
   message: string
   likeCount: number
 }
 
-export type DialogItemType = {
+export type DialogType = {
   id: string
   name: string
 }
 
-export type MessageItemType = {
+export type MessageType = {
   id: string
   message: string
 }
 
-export type FriendItemType = {
+export type FriendType = {
   id: string
   name: string
 }
@@ -27,34 +25,31 @@ export type ProfilePageType = {
 }
 
 export type DialogsPageType = {
-  dialogs: DialogItemType[]
-  messages: MessageItemType[]
+  dialogs: DialogType[]
+  messages: MessageType[]
 }
 
 export type SideBarPageType = {
-  friends: FriendItemType[]
+  friends: FriendType[]
 }
 
 export type StateType = {
   profilePage: ProfilePageType
   dialogsPage: DialogsPageType
   sideBarPage: SideBarPageType
-
 }
 
 export type AppType = {
   state: StateType
 }
 
-
-let state: StateType = {
+let state = {
   profilePage: {
     posts: [
-      {id: "1", message: 'Hi, how are you?', likeCount: 15},
-      {id: "2", message: 'Hi!', likeCount: 11},
-      {id: "3", message: 'Hi, how are you?', likeCount: 0},
-    ] as Array<PostType>
-
+      {id: "1", message: "Hi, how are you?", likeCount: 15},
+      {id: "2", message: "Hi!", likeCount: 11},
+      {id: "3", message: "Hi, how are you?", likeCount: 0},
+    ]
   },
 
   dialogsPage: {
@@ -82,11 +77,7 @@ let state: StateType = {
       {id: "2", name: "Sasha"},
       {id: "3", name: "Andrey"},
     ]
-
   }
 }
 
-
-
 export default state;
-
