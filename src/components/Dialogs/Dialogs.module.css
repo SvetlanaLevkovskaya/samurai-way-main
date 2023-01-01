@@ -1,32 +1,26 @@
 .dialogs {
-    display: grid;
-    grid-template-columns: 2fr 10fr;
-
+	display: grid;
+	grid-template-columns: 2fr 10fr;
 }
 
 .dialog a {
-    color: white;
+	color: white;
 }
 
-.dialog a:hover{
-    color: #469bce;
+.dialog a:hover {
+	color: #469bce;
 }
 
 .dialogsItems {
-
 }
 
 .dialogsItems .active {
-    color: #b23d8a;
-
+	color: #b23d8a;
 }
 
 .messages {
-
 }
 
 .messages .message {
-    color: white;
-
+	color: white;
 }
-

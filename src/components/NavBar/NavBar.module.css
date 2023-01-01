@@ -1,17 +1,17 @@
 .nav {
-    grid-area: n;
-    background-color: #ece049;
-    padding: 10px;
+	grid-area: n;
+	background-color: #ece049;
+	padding: 10px;
 }
 
 .item a {
-    color: white;
+	color: white;
 }
 
 .item a:active {
-    color: #469bce;
+	color: #469bce;
 }
 
 .item a:hover {
-    color: DarkMagenta;
+	color: DarkMagenta;
 }

@@ -1,14 +1,13 @@
 .item {
-color: aqua;
+	color: aqua;
 }
 
-.item.active{
-    color: #b23d8a;
+.item.active {
+	color: #b23d8a;
 }
 
 .item img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
 }
-
