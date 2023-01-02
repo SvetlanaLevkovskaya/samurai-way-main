@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Post.module.css'
 import post from './post.jpg'
-import { PostType } from '../../../../redux/state'
+import { PostType } from '../../../../redux/store'
 
 const Post = ({ id, message, likeCount }: PostType) => {
 		return (

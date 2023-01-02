@@ -1,7 +1,7 @@
 import React from 'react'
 import MyPosts from './MyPosts/MyPosts'
 import ProfileInfo from './ProfileInfo/ProfileInfo'
-import { ProfilePageType, updateNewPostText } from '../../redux/state'
+import { ProfilePageType } from '../../redux/store'
 
 type PropsType = {
 		profilePage: ProfilePageType
@@ -17,7 +17,7 @@ const Profile = (props: PropsType) => {
 					<MyPosts posts={ props.profilePage.posts }
 									 addPost={ props.addPost }
 									 newPostText={ props.profilePage.newPostText }
-									 updateNewPostText={ updateNewPostText }
+									 updateNewPostText={ props.updateNewPostText }
 					/>
 			</div>
 		)

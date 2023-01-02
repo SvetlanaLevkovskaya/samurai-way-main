@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from 'react'
 import Post from './Post/Post'
 import styles from './MyPosts.module.css'
-import { PostType } from '../../../redux/state'
+import { PostType } from '../../../redux/store'
 
 type PropsType = {
 		posts: PostType[]
@@ -10,7 +10,7 @@ type PropsType = {
 		updateNewPostText: (newText: string) => void
 }
 
-const MyPosts = (props: PropsType ) => {
+const MyPosts = (props: PropsType) => {
 		let postElements = props.posts.map(p => (
 			<Post key={ p.id } id={ p.id } message={ p.message } likeCount={ p.likeCount } />
 		))
@@ -27,9 +27,11 @@ const MyPosts = (props: PropsType ) => {
 		}
 
 		const onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-				/*props.updateNewPostText(newPostElement.current!.value)*/  // let newPostElement = React.createRef<HTMLTextAreaElement>()
+				/*props.updateNewPostText(newPostElement.current!.value)*/  // let newPostElement =
+																																		// React.createRef<HTMLTextAreaElement>()
 
 				props.updateNewPostText(e.currentTarget.value)
+				console.log(e.currentTarget.value)
 
 		}
 
@@ -38,7 +40,7 @@ const MyPosts = (props: PropsType ) => {
 					<h3>My posts</h3>
 					<div>
 							<div>
-									{/*<textarea ref={ newPostElement } value={ props.newPostText } onChange={ onPostChange } />*/}
+									{/*<textarea ref={ newPostElement } value={ props.newPostText } onChange={ onPostChange } />*/ }
 									<textarea value={ props.newPostText } onChange={ onPostChange } />
 							</div>
 							<div>
