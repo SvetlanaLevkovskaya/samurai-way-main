@@ -3,7 +3,7 @@ import styles from '../Dialogs.module.css'
 import { MessageType } from '../../../redux/state'
 
 const MessageItem = ({ id, message }: MessageType) => {
-	return <div className={styles.message}>{message}</div>
+		return <div className={ styles.message }>{ message }</div>
 }
 
 export default MessageItem

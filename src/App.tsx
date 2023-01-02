@@ -8,29 +8,42 @@ import { Route } from 'react-router-dom'
 import News from './components/News/News'
 import Music from './components/Music/Music'
 import Settings from './components/Settings/Settings'
-import { AppType } from './redux/state'
+import state, { StateType, updateNewPostText } from './redux/state'
+
+export type AppType = {
+		state: StateType
+		addPost: () => void
+		newPostText: string
+		updateNewPostText: (newText: string) => void
+}
 
 function App(props: AppType) {
-	return (
-		<div className='app-wrapper'>
-			<Header />
-			<NavBar />
 
-			<div className='app-wrapper-content'>
-				<Route
-					path='/dialogs'
-					render={() => <Dialogs dialogsPage={props.state.dialogsPage} />}
-				/>
-				<Route
-					path='/profile'
-					render={() => <Profile profilePage={props.state.profilePage} />}
-				/>
-				<Route path='/news' render={() => <News />} />
-				<Route path='/musics' render={() => <Music />} />
-				<Route path='/settings' render={() => <Settings />} />
+		return (
+			<div className="app-wrapper">
+					<Header />
+					<NavBar />
+
+					<div className="app-wrapper-content">
+							<Route
+								path="/dialogs"
+								render={ () => <Dialogs dialogsPage={ state.dialogsPage } /> }
+							/>
+							<Route
+								path="/profile"
+								render={ () => <Profile profilePage={ props.state.profilePage }
+																				addPost={ props.addPost }
+																				//newPostText={ props.state.profilePage.newPostText }
+																				newPostText={ state.profilePage.newPostText }
+																				updateNewPostText={ updateNewPostText }
+								/> }
+							/>
+							<Route path="/news" render={ () => <News /> } />
+							<Route path="/musics" render={ () => <Music /> } />
+							<Route path="/settings" render={ () => <Settings /> } />
+					</div>
 			</div>
-		</div>
-	)
+		)
 }
 
 export default App
